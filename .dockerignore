@@ -1,0 +1,5 @@
+# flyctl launch added from .gitignore
+**\node_modules 
+#variables de entorno
+**\.env
+fly.toml
