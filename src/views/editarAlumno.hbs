@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card card-body bg-dark p-4 text-white">
+                <h1>Modifica Alumno</h1>
+<form action="/alumnos/{{alumnos._id}}/updateAlumno/" method="POST">
+    <div>
+        <label for="nombres">Modifica Nombres:</label>
+        <input type="text" name="nombres" placeholder="Nombres"
+        value="{{alumnos.nombres}}" class="form-control bg-dark text-white">
+    </div>
+
+     <div>
+        <label for="aPaterno">Modifica A.Paterno:</label>
+        <input type="text" name="aPaterno" placeholder="Apellido Paterno"
+        value="{{alumnos.aPaterno}}" class="form-control bg-dark text-white">
+    </div>
+
+     <div>
+        <label for="aMaterno">Modifica A.Materno:</label>
+        <input type="text" name="aMaterno" placeholder="Apellido Materno"
+        value="{{alumnos.aMaterno}}" class="form-control bg-dark text-white">
+    </div>
+    
+     <div>
+        <label for="fechaNac">Modifica Fecha Nacimiento:</label>
+        <input type="date" name="fechaNac" placeholder="Fecha Nacimiento"
+        value="{{alumnos.fechaNac}}" class="form-control bg-dark text-white">
+    </div>
+
+     <div>
+        <label for="sexo">Modifica Sexo:</label>
+        <select name="sexo" id="sexo" 
+        value="{{alumnos.sexo}}" class="form-control bg-dark text-white">
+
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            
+        </select>
+        
+    </div>
+
+      <div>
+        <label for="celular">Modifica Celular:</label>
+        <input type="text" name="celular" placeholder="Celular"
+        value="{{alumnos.celular}}" class="form-control bg-dark text-white">
+    </div>
+
+      <div>
+        <label for="direccion">Modifica Direccion:</label>
+        <textarea name="direccion" cols="25" rows="3" placeholder="Direccion" 
+        value="{{alumnos.direccion}}" class="form-control bg-dark text-white">
+        </textarea>
+        
+    </div>
+    
+
+    <button class="btn btn-info">Actualizar</button>
+</form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

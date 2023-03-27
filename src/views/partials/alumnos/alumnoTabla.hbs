@@ -1,0 +1,48 @@
+{{#if alumnos}}
+<table class="table table-responsive table-bordered table-hover table-dark bg-dark">
+    <thead>
+        <tr class="text text-center text-primary">
+            <th>id</th>
+            <th>Nombres</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Sexo</th>
+            <th>Numero Celular</th>
+            <th>Direccion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each alumnos}}
+            <tr class="text text-center">
+                <td>{{@index}}</td>
+                <td>{{nombres}}</td>
+                <td>{{aPaterno}}</td>
+                <td>{{aMaterno}}</td>
+                <td>{{fechaNac}}</td>
+                <td>{{sexo}}</td>
+                <td>{{celular}}</td>
+                <td>{{direccion}}</td>
+                <td>
+                    {{#if opcion}}
+                        <a href="/alumnos/{{_id}}/statusAlumno" class="btn btn-warning">No Disponible</a>
+                    {{else}}
+                        <a href="/alumnos/{{_id}}/statusAlumno" class="btn btn-success">Disponible</a>
+                    {{/if}}
+                    <a href="/alumnos/{{_id}}/updateAlumno" class="btn btn-info">Actualizar</a>
+                    <a href="/alumnos/{{_id}}/deleteAlumno" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="text-center text-white">
+    <h1>No Hay Alumnos</h1>
+    <img src="/icons/agregar.png" class="w-75">
+</div>
+</div>
+
+{{/if}}

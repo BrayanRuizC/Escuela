@@ -1,0 +1,63 @@
+{{#if profesores}}
+  <table class="table table-responsive table-bordered table-hover table-dark bg-dark" >
+    <thead>
+      <tr class="text text-center text-primary">
+        <th>id</th>
+        <th>RFC</th>
+        <th>Nombre</th>
+        <th>Paterno</th>
+        <th>Materno</th>
+        <th>fechaNacimiento</th>
+        <th>Direccion</th>
+        <th>Celular</th>
+        <th>Profesion</th>
+        <th>NumeroEmpleado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each profesores}}
+        <tr class="text text-center">
+          <td>{{@index}}</td>
+          <td>{{rfc}}</td>
+          <td>{{nombre}}</td>
+          <td>{{paterno}}</td>
+          <td>{{materno}}</td>
+          <td>{{fechaNacimiento}}</td>
+          <td>{{direccion}}</td>
+          <td>{{celular}}</td>
+          <td>{{profesion}}</td>
+          <td>{{numEmpleado}}</td>
+          <td>
+            {{#if opcion}}
+              <a
+                href="/profesores/{{_id}}/statusProfesor"
+                class="btn btn-warning"
+              >No Disponible</a>
+            {{else}}
+              <a
+                href="/profesores/{{_id}}/statusProfesor"
+                class="btn btn-success"
+              >Didponible</a>
+            {{/if}}
+            <a
+              href="/profesores/{{_id}}/updateProfesor"
+              class="btn btn-info"
+            >Actualizar</a>
+            <a
+              href="/profesores/{{_id}}/deleteProfesor"
+              class="btn btn-danger"
+            >Eliminar</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="text-center text-white">
+      <h1>No Hay Profesores</h1>
+      <img src="/icons/agregar.png" class="w-75" />
+    </div>
+  </div>
+{{/if}}

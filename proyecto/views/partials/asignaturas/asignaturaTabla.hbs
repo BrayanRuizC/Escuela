@@ -1,0 +1,39 @@
+{{#if asignaturas}}
+<table class="table table-responsive table-bordered table-hover table-dark bg-dark">
+    <thead>
+        <tr class="text text-center text-primary">
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Creditos</th>
+            <th>Horas</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each asignaturas}}
+            <tr class="text text-center">
+                <td>{{@index}}</td>
+                <td>{{nombre}}</td>
+                <td>{{creditos}}</td>
+                <td>{{horas}}</td>
+                <td>
+                    {{#if opcion}}
+                        <a href="/asignaturas/{{_id}}/statusAsignatura" class="btn btn-warning">No Disponible</a>
+                    {{else}}
+                        <a href="/asignaturas/{{_id}}/statusAsignatura" class="btn btn-success">Disponible</a>
+                    {{/if}}
+                    <a href="/asignaturas/{{_id}}/updateAsignatura" class="btn btn-info">Actualizar</a>
+                    <a href="/asignaturas/{{_id}}/deleteAsignatura" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="text-center text-white">
+    <h1>No Hay Asignaturas</h1>
+    <img src="/icons/agregar.png" class="w-75">
+</div>
+</div>
+{{/if}}
